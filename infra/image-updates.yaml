@@ -40,7 +40,7 @@ spec:
       author:
         email: nicholas.j.santos@gmail.com
         name: nick santos
-      messageTemplate: "{{range .Updated.Images}}{{println .}}{{end}}"
+      messageTemplate: "Flux bot commit {{range .Updated.Images}}{{println .}}{{end}}"
     push:
       branch: main
   update:
