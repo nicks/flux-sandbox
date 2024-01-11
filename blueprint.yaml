@@ -1,2 +1,7 @@
 name: My cool blueprint test
 image: docker.io/nicksantos624/flux-sandbox-example-image:v0.6.0 # {"$imagepolicy": "default:flux-sandbox-example-image"}
+
+services:
+- serviceName: my-service
+  repo: docker.io/nicksantos624/flux-sandbox-example-image # {"$imagepolicy": "default:flux-sandbox-example-image:name"}
+  tag: "v0.6.0" # {"$imagepolicy": "default:flux-sandbox-example-image:tag"}
