@@ -1,0 +1,48 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: flux-sandbox-example-image
+  namespace: default
+spec:
+  image: docker.io/nicksantos624/flux-sandbox-example-image
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: flux-sandbox-example-image
+  namespace: default
+spec:
+  imageRepositoryRef:
+    name: flux-sandbox-example-image
+    namespace: default
+  policy:
+    semver:
+      range: ">=0.0.0-0"
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: flux-sandbox-example-image-blueprint
+  namespace: default
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: nicholas.j.santos@gmail.com
+        name: nick santos
+      messageTemplate: "{{range .Updated.Images}}{{println .}}{{end}}"
+    push:
+      branch: main
+  update:
+    path: ./
+    strategy: Setters

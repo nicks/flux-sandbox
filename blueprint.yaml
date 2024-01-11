@@ -1,0 +1,3 @@
+# This is a fake yaml file
+
+image: nicksantos624/flux-sandbox-example-image:v0.1.0  # {"$imagepolicy": "default:flux-sandbox-example-image"}
