@@ -1,2 +1,2 @@
 name: My cool blueprint test
-image: docker.io/nicksantos624/flux-sandbox-example-image:v0.5.0 # {"$imagepolicy": "default:flux-sandbox-example-image"}
+image: docker.io/nicksantos624/flux-sandbox-example-image:v0.6.0 # {"$imagepolicy": "default:flux-sandbox-example-image"}
