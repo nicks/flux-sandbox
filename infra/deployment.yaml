@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flux-sandbox-example
-        image: docker.io/nicksantos624/flux-sandbox-example-image:v0.2.0 # {"$imagepolicy": "default:flux-sandbox-example-image"}
+        image: docker.io/nicksantos624/flux-sandbox-example-image:v0.3.0 # {"$imagepolicy": "default:flux-sandbox-example-image"}
         ports:
         - containerPort: 8000
