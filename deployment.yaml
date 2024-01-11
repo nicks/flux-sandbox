@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux-sandbox-example
+  labels:
+    app: flux-sandbox-example
+spec:
+  selector:
+    matchLabels:
+      app: flux-sandbox-example
+  template:
+    metadata:
+      labels:
+        app: flux-sandbox-example
+    spec:
+      containers:
+      - name: flux-sandbox-example
+        image: nicksantos624/flux-sandbox-example-image:v0.1.0
+        ports:
+        - containerPort: 8000
